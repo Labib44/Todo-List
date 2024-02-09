@@ -1,5 +1,14 @@
 
 # ToDo List App
+## About
+The Todo List app aims to streamline task management and help users stay productive by providing a simple and efficient way to organize their daily tasks, prioritize activities, and track progress effectively.
+
+## Key Features:
+1. Add Tasks
+2. Remove Tasks
+3. Mark Tasks as Completed
+4. Filtering and Sorting
+5. Priority Levels
 
 ## Technology
 1. React js
@@ -22,3 +31,4 @@
 
 1. yarn add 
 2. yarn dev
+
