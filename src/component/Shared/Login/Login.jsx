@@ -64,7 +64,7 @@ const Login = () => {
                     </div>
 
                     <input type="submit" className='btn btn-accent w-full m-3' />
-                    <p className='p-3'>New to Doctor portal ?<Link to='/register' className='text-primary'>Create an account</Link></p>
+                    <p className='p-3'>New to ToDo App ?<Link to='/register' className='text-primary'>Create an account</Link></p>
 
                 </form>
                 <div className="divider">OR</div>

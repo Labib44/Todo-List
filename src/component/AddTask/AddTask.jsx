@@ -6,7 +6,7 @@ import { addTask } from "../../redux/features/Tasks/TasksSlice";
 
 
 const AddTask = ({ isOpen, setIsOpen }) => {
-    const { register, handleSubmit, reset} = useForm();
+    const { register, handleSubmit, formState: { errors }, reset} = useForm();
     const dispatch=useDispatch();
 
     const onSubmit = (data) => {
@@ -23,15 +23,18 @@ const AddTask = ({ isOpen, setIsOpen }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-4 mt-5">
                 <label htmlFor="title"> Title</label>
-                <input {...register("title")} placeholder="Title" className=" rounded-lg" />
+                <input {...register("title", { required: "Title is required" })} placeholder="Title" className=" rounded-lg" />
+                {errors.title && <p className='text-red-500'>{errors.title?.message}</p>}
             </div>
             <div className="flex flex-col gap-4">
                 <label htmlFor="description" className="mt-2"> Description</label>
-                <textarea rows="2" {...register("description")} placeholder="Description" className=" rounded-lg"></textarea>
+                <textarea rows="2" {...register("description", { required: "Description is required" })} placeholder="Description" className=" rounded-lg"></textarea>
+                {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
             </div>
             <div className="flex flex-col gap-4">
                 <label htmlFor="date" className="mt-2">Deadline</label>
-                <input type="date" {...register("date")} placeholder="Deadline" className=" rounded-lg" />
+                <input type="date" {...register("date", { required: "Date is required" })} placeholder="Deadline" className=" rounded-lg" />
+                {errors.date && <p className='text-red-500'>{errors.date?.message}</p>}
             </div>
             <div className="flex flex-col gap-4">
                 <label htmlFor="assignedTo" className="mt-2">Assign To</label>

@@ -24,7 +24,7 @@ const MyTasks = () => {
                     className="bg-gray-100 rounded-md p-3 flex justify-between shadow-md"
                 >
                     <h1>{item.title}</h1>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 sm:flex-wrap">
                         <button onClick={() => handleModal(item.id)} className="grid place-content-center" title="Details">
                             <DocumentMagnifyingGlassIcon className="w-5 h-5 text-blue-500" />
                         </button>
